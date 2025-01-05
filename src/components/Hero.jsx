@@ -17,7 +17,7 @@ const Hero = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1, ease: [0.83, 0, 0.17, 1] }}
           className="absolute right-36 top-0 motion-safe:animate-spin-slow">
-          <Image src="/spinner.webp" width={200} height={200} alt="spinner" />
+          <Image src="/spinner.webp" width={200} height={200} alt="" />
         </motion.div>
       </div>
       <div className="overflow-hidden">

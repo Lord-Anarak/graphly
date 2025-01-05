@@ -14,7 +14,7 @@ const Header = () => {
       className="flex justify-between items-center px-10 py-5 absolute w-full">
       <div>
         <Link href="/">
-          <Image src="/logo.webp" width="200" height="200" alt="logo" />
+          <Image src="/logo.webp" width="200" height="200" alt="" />
         </Link>
       </div>
       <nav className="uppercase flex items-center gap-2">
