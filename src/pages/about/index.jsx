@@ -36,7 +36,7 @@ const AboutUs = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1, ease: [0.83, 0, 0.17, 1] }}
           className="absolute top-36 right-28 rounded-2xl overflow-hidden">
-          <Image src="/about.webp" width={350} height={300} />
+          <Image src="/about.webp" width={350} height={300} alt="about" />
         </motion.div>
       </section>
       <section className="px-10 py-32">
@@ -50,7 +50,7 @@ const AboutUs = () => {
               into powerful digital experiences.
             </h5>
             <div className="w-full h-[70vh] mt-20 overflow-hidden flex items-center justify-end rounded-3xl">
-              <Image src="/about2.webp" width={700} height={500} />
+              <Image src="/about2.webp" width={700} height={500} alt="about2" />
             </div>
           </div>
           <div>

@@ -21,7 +21,7 @@ const InfiniteText = () => {
         style={{ x }}
         className="flex items-center whitespace-nowrap flex-nowrap relative gap-5 text-desc">
         {[...services, ...services].map((service, index) => (
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-5" key={indexss}>
             <p key={index} className="uppercase text-[1.4em] font-bold">
               {service}
             </p>
