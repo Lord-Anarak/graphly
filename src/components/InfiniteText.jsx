@@ -21,11 +21,8 @@ const InfiniteText = () => {
         style={{ x }}
         className="flex items-center whitespace-nowrap flex-nowrap relative gap-5 text-desc">
         {[...services, ...services].map((service, index) => (
-          <div className="flex items-center gap-5" key={index}>
-            <p key={index} className="uppercase text-[1.4em] font-bold">
-              {service}
-            </p>
-
+          <div key={index} className="flex items-center gap-5">
+            <p className="uppercase text-[1.4em] font-bold">{service}</p>
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -28,7 +28,12 @@ const AboutUs = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, ease: [0.83, 0, 0.17, 1] }}
             className="absolute left-0 -bottom-5 motion-safe:animate-spin-slow">
-            <Image src="/spinner.webp" width={150} height={150} />
+            <Image
+              src="/spinner.webp"
+              width={150}
+              height={150}
+              alt="spinning badge"
+            />
           </motion.div>
         </div>
         <motion.div
@@ -50,7 +55,12 @@ const AboutUs = () => {
               into powerful digital experiences.
             </h5>
             <div className="w-full h-[70vh] mt-20 overflow-hidden flex items-center justify-end rounded-3xl">
-              <Image src="/about2.webp" width={700} height={500} alt="about2" />
+              <Image
+                src="/about2.webp"
+                width={700}
+                height={500}
+                alt="Creative table with objects"
+              />
             </div>
           </div>
           <div>

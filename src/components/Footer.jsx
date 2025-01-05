@@ -46,7 +46,12 @@ const Footer = () => {
       </div>
       <div className="grid grid-cols-2 py-16 mt-16 border-y border-zinc-900">
         <div>
-          <Image src="/graphly.webp" width={220} height={220} alt="" />
+          <Image
+            src="/graphly.webp"
+            width={220}
+            height={220}
+            alt="Company Logo"
+          />
           <div className="text-zinc-900 mt-5">
             <TextMaskAnimation
               phrases={[
