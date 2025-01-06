@@ -30,7 +30,7 @@ const TextAnimation = ({ text, once, type, delayIndex }) => {
             return (
               <span
                 key={index}
-                className="relative overflow-hidden inline-flex mr-1">
+                className="relative overflow-hidden inline-flex mr-3">
                 <motion.span
                   className="mr-3"
                   variants={slideUp}

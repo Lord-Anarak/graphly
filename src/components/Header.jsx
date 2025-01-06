@@ -4,8 +4,10 @@ import Link from "next/link";
 import React from "react";
 import { motion } from "motion/react";
 import Button from "./Button";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const path = usePathname();
   return (
     <motion.div
       initial={{ y: -100, opacity: 0 }}
@@ -14,7 +16,12 @@ const Header = () => {
       className="flex justify-between items-center px-10 py-5 absolute w-full">
       <div>
         <Link href="/">
-          <Image src="/logo.webp" width="200" height="200" alt="Company Logo" />
+          <Image
+            src={path === "/contact" ? "/graphly.webp" : "/logo.webp"}
+            width="200"
+            height="200"
+            alt="Company Logo"
+          />
         </Link>
       </div>
       <nav className="uppercase flex items-center gap-2">
@@ -28,10 +35,8 @@ const Header = () => {
           <Button>Works</Button>
         </Link>
       </nav>
-      <Link
-        href="/contact"
-        className="p-3 px-10 text-zinc-900 bg-zinc-50 rounded-full">
-        Contact Now
+      <Link href="/contact" className="uppercase tracking-wide">
+        <Button isButton>Contact </Button>
       </Link>
     </motion.div>
   );

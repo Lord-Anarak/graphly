@@ -71,7 +71,7 @@ const PageTransition = ({ children }) => {
     <div className="bg-black">
       <motion.div
         {...anim(slide)}
-        className="fixed top-0 left-0 bg-orange-600 h-[100vh] w-[100vw] z-10"></motion.div>
+        className="fixed top-0 left-0 bg-orange-600 h-screen w-screen z-10"></motion.div>
       <motion.div {...anim(perspective)} className="h-full">
         <motion.div {...anim(opacity)}>{children}</motion.div>
       </motion.div>

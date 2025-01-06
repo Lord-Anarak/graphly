@@ -6,7 +6,7 @@ import TextAnimation from "./TextAnimation";
 
 const Footer = () => {
   return (
-    <footer className="px-10 pt-20 rounded-ss-[4rem] rounded-se-[4rem] bg-zinc-50">
+    <footer className="px-10 pt-20 rounded-ss-[4rem] rounded-se-[4rem] bg-zinc-100">
       <div className="flex justify-between items-center">
         <h2 className="text-desc font-bold text-zinc-900">
           <TextAnimation

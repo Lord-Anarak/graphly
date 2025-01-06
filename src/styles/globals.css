@@ -8,10 +8,25 @@ body {
   color-scheme: dark;
 }
 
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 h1 {
   font-size: max(4em, 8vw);
   font-weight: 700;
   line-height: 1;
+}
+
+h2 {
+  font-size: clamp(5em, 7.5vw, 7.5em);
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 h3 {
