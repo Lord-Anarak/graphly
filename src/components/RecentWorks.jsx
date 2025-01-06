@@ -1,30 +1,33 @@
 import React from "react";
+import { FocusCards } from "./ui/FocusCards";
 
 const Works = [
   {
-    title: "Sauvage Perfume",
-    desc: "Product design | 3D Model | Creative Animation",
-    file: "#",
+    title: "Spicy",
+    desc: "Brand Strategy & Voice, Branding & Design",
+    src: "/works/002.webp",
   },
   {
     title: "Sauvage Perfume",
     desc: "Product design | 3D Model | Creative Animation",
-    file: "#",
+    src: "/works/003.webp",
+  },
+  {
+    title: "Sauvage Perfume",
+    desc: "Product design | 3D Model | Creative Animation",
+    src: "/works/005.webp",
+  },
+  {
+    title: "Sauvage Perfume",
+    desc: "Product design | 3D Model | Creative Animation",
+    src: "/works/006.webp",
   },
 ];
 
 const RecentWorks = () => {
   return (
-    <section className="p-10 mt-10">
-      <div className="mt-20 grid grid-cols-2 gap-20">
-        {Works.map(({ title, desc, src }, i) => (
-          <div key={i}>
-            <div className="rounded-3xl w-full h-[300px] bg-zinc-300"></div>
-            <h3 className="mt-5">{title}</h3>
-            <p className="font-extralight tracking-normal">{desc}</p>
-          </div>
-        ))}
-      </div>
+    <section className="p-section px-10 mt-10">
+      <FocusCards cards={Works} />
     </section>
   );
 };

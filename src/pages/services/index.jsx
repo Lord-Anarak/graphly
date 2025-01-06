@@ -198,8 +198,8 @@ const Services = () => {
           </div>
         </div>
       </section>
-      <section className="py-section px-10 grid grid-cols-2 gap-base">
-        <div>
+      <section className="py-mediumSection px-10 grid grid-cols-2 gap-base">
+        <div className="flex flex-col justify-between pb-10">
           <h2 className="uppercase leading-none font-semibold">
             <TextMaskAnimation phrases={["Content &", "Campaigns"]} />
           </h2>
@@ -253,12 +253,12 @@ const Services = () => {
           </div>
         </div>
       </section>
-      <section className="py-section px-10 grid grid-cols-2 gap-base">
-        <div>
+      <section className="py-mediumSection px-10 grid grid-cols-2 gap-base">
+        <div className="flex flex-col justify-between pb-10">
           <h2 className="uppercase leading-none font-semibold">
             <TextMaskAnimation phrases={["Digital &", "Web"]} />
           </h2>
-          <p className="mt-20">
+          <p>
             Designing engaging digital experiences that combine brand strategy
             and creativity with UX insights to deliver functionality and ease of
             use. Always cutting-edge.

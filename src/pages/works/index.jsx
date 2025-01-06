@@ -2,9 +2,34 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import TextAnimation from "@/components/TextAnimation";
+import { FocusCards } from "@/components/ui/FocusCards";
+import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import Image from "next/image";
 import React from "react";
+
+const AllWorks = [
+  {
+    title: "Spicy",
+    desc: "Brand Strategy & Voice, Branding & Design",
+    src: "/works/002.webp",
+  },
+  {
+    title: "Sauvage Perfume",
+    desc: "Product design | 3D Model | Creative Animation",
+    src: "/works/003.webp",
+  },
+  {
+    title: "Sauvage Perfume",
+    desc: "Product design | 3D Model | Creative Animation",
+    src: "/works/005.webp",
+  },
+  {
+    title: "Sauvage Perfume",
+    desc: "Product design | 3D Model | Creative Animation",
+    src: "/works/006.webp",
+  },
+];
 
 const Works = () => {
   return (
@@ -13,13 +38,13 @@ const Works = () => {
       <section className="min-h-screen bg-heroBg bg-no-repeat px-10 pt-36  flex flex-col justify-between">
         <div className="uppercase relative mt-20">
           <h1 className="ml-36">
-            <TextAnimation text="Creative." once delayIndex={1} />
+            <TextAnimation text="Showcase" once delayIndex={1} />
           </h1>
           <h1 className="ml-72">
-            <TextAnimation text="Impactful." once delayIndex={3} />
+            <TextAnimation text="Creative" once delayIndex={3} />
           </h1>
           <h1 className="ml-96">
-            <TextAnimation text="Innovative." once delayIndex={2} />
+            <TextAnimation text="Excellence" once delayIndex={2} />
           </h1>
 
           <motion.div
@@ -42,6 +67,9 @@ const Works = () => {
           className="absolute top-36 right-28 rounded-2xl overflow-hidden">
           <Image src="/about.webp" width={350} height={300} alt="about" />
         </motion.div>
+      </section>
+      <section className="p-section px-10 mt-10">
+        <FocusCards cards={AllWorks} className="md:grid-cols-3" />
       </section>
       <Footer />
     </PageTransition>
