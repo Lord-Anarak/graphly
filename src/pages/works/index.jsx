@@ -3,12 +3,17 @@ import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import TextAnimation from "@/components/TextAnimation";
 import { FocusCards } from "@/components/ui/FocusCards";
-import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import Image from "next/image";
 import React from "react";
 
 const AllWorks = [
+  {
+    title: "Pages",
+    desc: "Brand Strategy & Voice, Branding & Design",
+    src: "/works/brand/015.webp",
+    link: "/works/pages",
+  },
   {
     title: "Spicy",
     desc: "Brand Strategy & Voice, Branding & Design",
@@ -28,6 +33,61 @@ const AllWorks = [
     title: "Sauvage Perfume",
     desc: "Product design | 3D Model | Creative Animation",
     src: "/works/006.webp",
+  },
+  {
+    title: "Sauvage Perfume",
+    desc: "Product design | 3D Model | Creative Animation",
+    src: "/works/007.webp",
+  },
+  {
+    title: "Sauvage Perfume",
+    desc: "Product design | 3D Model | Creative Animation",
+    src: "/works/008.webp",
+  },
+  {
+    title: "Sauvage Perfume",
+    desc: "Product design | 3D Model | Creative Animation",
+    src: "/works/009.webp",
+  },
+  {
+    title: "Sauvage Perfume",
+    desc: "Product design | 3D Model | Creative Animation",
+    src: "/works/010.webp",
+  },
+  {
+    title: "Sauvage Perfume",
+    desc: "Product design | 3D Model | Creative Animation",
+    src: "/works/011.webp",
+  },
+  {
+    title: "Sauvage Perfume",
+    desc: "Product design | 3D Model | Creative Animation",
+    src: "/works/012.webp",
+  },
+  {
+    title: "Sauvage Perfume",
+    desc: "Product design | 3D Model | Creative Animation",
+    src: "/works/013.webp",
+  },
+  {
+    title: "Sauvage Perfume",
+    desc: "Product design | 3D Model | Creative Animation",
+    src: "/works/014.webp",
+  },
+  {
+    title: "Sauvage Perfume",
+    desc: "Product design | 3D Model | Creative Animation",
+    src: "/works/015.webp",
+  },
+  {
+    title: "Sauvage Perfume",
+    desc: "Product design | 3D Model | Creative Animation",
+    src: "/works/016.webp",
+  },
+  {
+    title: "Sauvage Perfume",
+    desc: "Product design | 3D Model | Creative Animation",
+    src: "/works/017.webp",
   },
 ];
 

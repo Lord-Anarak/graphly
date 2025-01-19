@@ -3,46 +3,43 @@ import Link from "next/link";
 import React from "react";
 import TextMaskAnimation from "./TextMaskAnimation";
 import TextAnimation from "./TextAnimation";
+import Button from "./Button";
 
 const Footer = () => {
   return (
     <footer className="px-10 pt-20 rounded-ss-[4rem] rounded-se-[4rem] bg-zinc-100">
       <div className="flex justify-between items-center">
         <h2 className="text-desc font-bold text-zinc-900">
-          <TextAnimation
-            text="Let's Connect There"
-            once={true}
-            delayIndex={8}
-          />
+          <TextAnimation text="Let's Connect" once={true} delayIndex={8} />
         </h2>
-        <Link
-          href="/contact"
-          className="rounded-full px-5 py-2 bg-orange-600 flex items-center">
-          Work with us{" "}
-          <span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="42"
-              height="42"
-              viewBox="0 0 42 42"
-              fill="none">
-              <path
-                d="M12.25 29.75L29.75 12.25"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M12.25 12.25H29.75V29.75"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </span>
-        </Link>
+        <Button isButton>
+          <Link href="/contact" className="rounded-full px-3 flex items-center">
+            Work with us{" "}
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="42"
+                height="42"
+                viewBox="0 0 42 42"
+                fill="none">
+                <path
+                  d="M12.25 29.75L29.75 12.25"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12.25 12.25H29.75V29.75"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </Link>
+        </Button>
       </div>
       <div className="grid grid-cols-2 py-16 mt-16 border-y border-zinc-900">
         <div>
@@ -55,9 +52,9 @@ const Footer = () => {
           <div className="text-zinc-900 mt-5">
             <TextMaskAnimation
               phrases={[
-                "Graphly is your partner in crafting visually compelling and functional design solutions. We",
-                "specialize in branding, digital transformation, and commercial production, empowering",
-                "startups, SMEs, and enterprises to thrive in the digital age.",
+                "Graphly is your partner in creating eye-catching and practical designs. We focus on",
+                "branding, digital solutions, and commercial production, helping startups, small",
+                "businesses, and large companies succeed in today’s digital world.",
               ]}
             />
           </div>
@@ -116,7 +113,7 @@ const Footer = () => {
             </span>
           </div>
         </div>
-        <div className="text-zinc-900 grid grid-cols-4">
+        <div className="text-zinc-900 grid grid-cols-3">
           <div className="col-start-2">
             <h5 className="font-semibold text-orange-600">Navigation</h5>
             <ul className="mt-5 flex flex-col gap-3">
@@ -136,9 +133,9 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/service"
+                  href="/services"
                   className="relative inline-flex after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-zinc-900 after:max-w-0 hover:after:max-w-full after:transition-all after:duration-500 after:ease-[cubic-bezier(0.83,0,0.17,1)]">
-                  <TextMaskAnimation phrases={["Service"]} />
+                  <TextMaskAnimation phrases={["Services"]} />
                 </Link>
               </li>
               <li>
@@ -155,9 +152,16 @@ const Footer = () => {
             <ul className="mt-5 flex flex-col gap-3">
               <li>
                 <Link
-                  href="tel:+971563123456"
+                  href="tel:+97145547461"
                   className="relative inline-flex after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-zinc-900 after:max-w-0 hover:after:max-w-full after:transition-all after:duration-500 after:ease-[cubic-bezier(0.83,0,0.17,1)]">
-                  <TextMaskAnimation phrases={["+971 56 312 3456"]} />
+                  <TextMaskAnimation phrases={["+971 4 554 7461"]} />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="tel:+971588175064"
+                  className="relative inline-flex after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-zinc-900 after:max-w-0 hover:after:max-w-full after:transition-all after:duration-500 after:ease-[cubic-bezier(0.83,0,0.17,1)]">
+                  <TextMaskAnimation phrases={["+971 58 817 5064"]} />
                 </Link>
               </li>
               <li>
@@ -165,6 +169,19 @@ const Footer = () => {
                   href="mailto:info@graphilyco.com"
                   className="relative inline-flex after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-zinc-900 after:max-w-0 hover:after:max-w-full after:transition-all after:duration-500 after:ease-[cubic-bezier(0.83,0,0.17,1)]">
                   <TextMaskAnimation phrases={["info@graphilyco.com"]} />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="relative inline-flex after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-zinc-900 after:max-w-0 hover:after:max-w-full after:transition-all after:duration-500 after:ease-[cubic-bezier(0.83,0,0.17,1)]">
+                  <TextMaskAnimation
+                    phrases={[
+                      "Office 702, Oxford Tower,",
+                      "Business Bay, Dubai UAE",
+                      "",
+                    ]}
+                  />
                 </Link>
               </li>
             </ul>

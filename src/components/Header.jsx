@@ -25,6 +25,9 @@ const Header = () => {
         </Link>
       </div>
       <nav className="uppercase flex items-center gap-2">
+        <Link href="/">
+          <Button>Home</Button>
+        </Link>
         <Link href="/about">
           <Button>About</Button>
         </Link>
@@ -34,10 +37,10 @@ const Header = () => {
         <Link href="/works">
           <Button>Works</Button>
         </Link>
+        <Link href="/contact">
+          <Button>Contact </Button>
+        </Link>
       </nav>
-      <Link href="/contact" className="uppercase tracking-wide">
-        <Button isButton>Contact </Button>
-      </Link>
     </motion.div>
   );
 };

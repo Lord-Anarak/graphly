@@ -145,7 +145,7 @@ const Services = () => {
       <section className="py-section px-10 grid grid-cols-2 gap-base">
         <div>
           <h2 className="uppercase leading-none font-semibold">
-            <TextMaskAnimation phrases={["Brand", "Strategy &", "Voice"]} />
+            <TextMaskAnimation phrases={["Brand", "identity &", "Strategy"]} />
           </h2>
           <p className="mt-20">
             Helping you uncover your brand’s purpose and uniqueness – and the
