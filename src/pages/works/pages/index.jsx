@@ -211,18 +211,18 @@ const Pages = () => {
       <section className="py-mediumSection px-10 grid grid-cols-2 gap-[calc(theme(gap.base)*2)]">
         <div>
           <h2 className="text-desc font-normal uppercase">
-            "We really appreciate their dedication to quality."
+            &quot;We really appreciate their dedication to quality.&quot;
           </h2>
         </div>
         <div className="flex flex-col justify-between">
           <p className="text-[1.2em]">
-            “Must explain to you how all this mistaken idea of denouncing
+            &quot;Must explain to you how all this mistaken idea of denouncing
             pleasure and praising pain was born and I will give you a complete
             account of the system, and expound the actual teachings of the great
             explorer of the truth. The master-builder of human happiness. No one
             rejects, dislikes, or avoids pleasure itself, because it is
             pleasure, but because those who do not know how to pursue pleasure
-            rationally encounter.”
+            rationally encounter.&quot;
           </p>
           <div>
             <h3 className="uppercase">Name</h3>
@@ -234,7 +234,7 @@ const Pages = () => {
         <div className="border-t border-gray-500 py-mediumSection grid grid-cols-2 gap-[calc(theme(gap.base)*2)]">
           <h2 className="text-desc font-normal uppercase">Results</h2>
           <p className="text-[1.2em]">
-            The final logo successfully embodies the brand's vision of
+            The final logo successfully embodies the brand&apos;s vision of
             innovation and creativity. The spiral symbol provides a strong
             standalone identity, while the serif typography adds
             professionalism. Feedback from stakeholders and target audiences was
