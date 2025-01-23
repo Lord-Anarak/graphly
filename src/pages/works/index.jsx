@@ -95,15 +95,15 @@ const Works = () => {
   return (
     <PageTransition>
       <Header />
-      <section className="min-h-screen bg-heroBg bg-no-repeat px-10 pt-36  flex flex-col justify-between">
-        <div className="uppercase relative mt-20">
-          <h1 className="ml-36">
+      <section className="min-h-screen bg-heroBg bg-no-repeat px-mediumSection pt-36 flex flex-col justify-between">
+        <div className="uppercase relative sm:mt-20 mt-36">
+          <h1 className="sm:ml-36">
             <TextAnimation text="Showcase" once delayIndex={1} />
           </h1>
-          <h1 className="ml-72">
+          <h1 className="sm:ml-72">
             <TextAnimation text="Creative" once delayIndex={3} />
           </h1>
-          <h1 className="ml-96">
+          <h1 className="sm:ml-96">
             <TextAnimation text="Excellence" once delayIndex={2} />
           </h1>
 
@@ -111,24 +111,28 @@ const Works = () => {
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, ease: [0.83, 0, 0.17, 1] }}
-            className="absolute left-0 -bottom-5 motion-safe:animate-spin-slow">
-            <Image
-              src="/spinner.webp"
-              width={150}
-              height={150}
-              alt="spinning badge"
-            />
+            className="absolute left-0 sm:-bottom-5 bottom-40">
+            <div className="w-[calc(max(120px,15vw))] h-[calc(max(120px,15vw))] relative motion-safe:animate-spin-slow">
+              <Image
+                src="/spinner.webp"
+                fill
+                objectFit="cover"
+                alt="spinning badge"
+              />
+            </div>
           </motion.div>
         </div>
         <motion.div
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1, ease: [0.83, 0, 0.17, 1] }}
-          className="absolute top-36 right-28 rounded-2xl overflow-hidden">
-          <Image src="/about.webp" width={350} height={300} alt="about" />
+          className="absolute sm:top-36 sm:right-28 bottom-10 ">
+          <div className="relative w-[90vw] sm:w-[25vw] h-36 sm:h-[30vh] rounded-2xl overflow-hidden">
+            <Image src="/about.webp" fill objectFit="cover" alt="about" />
+          </div>
         </motion.div>
       </section>
-      <section className="p-section px-10 mt-10">
+      <section className="py-section px-mediumSection mt-10">
         <FocusCards cards={AllWorks} className="md:grid-cols-3" />
       </section>
       <Footer />

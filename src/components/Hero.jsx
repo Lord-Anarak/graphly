@@ -5,9 +5,9 @@ import { motion } from "motion/react";
 
 const Hero = () => {
   return (
-    <div className="min-h-screen bg-heroBg bg-no-repeat px-10 pt-36 pb-16 flex flex-col justify-between">
+    <div className="min-h-screen bg-heroBg bg-no-repeat sm:px-10 px-5 pt-36 pb-16 flex flex-col justify-between">
       <div className="uppercase relative">
-        <h1>
+        <h1 className="flex flex-col gap-2 sm:gap-0">
           <TextAnimation text="Creating" once delayIndex={1} />
           <TextAnimation text="Digital" once delayIndex={8} />
           <TextAnimation text="Masterpieces" once delayIndex={6} />
@@ -16,28 +16,28 @@ const Hero = () => {
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1, ease: [0.83, 0, 0.17, 1] }}
-          className="absolute right-36 top-0 motion-safe:animate-spin-slow">
-          <Image
-            src="/spinner.webp"
-            width={200}
-            height={200}
-            alt="spinning badge"
-          />
+          className="absolute sm:left-[75%] left-0 sm:top-0 top-36">
+          <div className="w-[calc(max(120px,15vw))] h-[calc(max(120px,15vw))] relative motion-safe:animate-spin-slow">
+            <Image
+              src="/spinner.webp"
+              fill
+              objectFit="cover"
+              alt="spinning badge"
+            />
+          </div>
         </motion.div>
       </div>
-      <div className="overflow-hidden">
+      <div>
         <motion.div
           initial={{ y: 100, opacity: 0.5 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, ease: [0.83, 0, 0.17, 1], delay: 0.7 }}
-          className="flex justify-between">
+          className="flex flex-wrap justify-between gap-base">
           <h5>Your Partner in Creative Transformation</h5>
-          <div className="flex items-start gap-10">
-            <span>
+          <div className="flex items-start gap-base">
+            <div className="w-[calc(max(70px,6vw))] h-[calc(max(70px,6vw))] mt-1.5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="93"
-                height="93"
                 viewBox="0 0 93 93"
                 fill="none">
                 <path
@@ -48,11 +48,12 @@ const Hero = () => {
                   stroke-linejoin="round"
                 />
               </svg>
-            </span>
+            </div>
             <div>
-              <h5>Empowering brands with innovative design and</h5>
-              <h5>digital strategies that captivate, connect, and drive</h5>
-              <h5>success.</h5>
+              <h5 className="sm:w-[30vw]">
+                Empowering brands with innovative design and digital strategies
+                that captivate, connect, and drive success.
+              </h5>
             </div>
           </div>
         </motion.div>

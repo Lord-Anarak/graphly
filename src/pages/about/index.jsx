@@ -11,15 +11,15 @@ const AboutUs = () => {
   return (
     <PageTransition>
       <Header />
-      <section className="min-h-screen bg-heroBg bg-no-repeat px-10 pt-36  flex flex-col justify-between">
-        <div className="uppercase relative mt-20">
-          <h1 className="ml-36">
+      <section className="min-h-screen bg-heroBg bg-no-repeat px-mediumSection pt-36 flex flex-col justify-between">
+        <div className="uppercase relative sm:mt-20 mt-36">
+          <h1 className="sm:ml-36">
             <TextAnimation text="Creative." once delayIndex={1} />
           </h1>
-          <h1 className="ml-72">
+          <h1 className="sm:ml-72">
             <TextAnimation text="Impactful." once delayIndex={3} />
           </h1>
-          <h1 className="ml-96">
+          <h1 className="sm:ml-96">
             <TextAnimation text="Innovative." once delayIndex={2} />
           </h1>
 
@@ -27,33 +27,37 @@ const AboutUs = () => {
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, ease: [0.83, 0, 0.17, 1] }}
-            className="absolute left-0 -bottom-5 motion-safe:animate-spin-slow">
-            <Image
-              src="/spinner.webp"
-              width={150}
-              height={150}
-              alt="spinning badge"
-            />
+            className="absolute left-0 sm:-bottom-5 bottom-40">
+            <div className="w-[calc(max(120px,15vw))] h-[calc(max(120px,15vw))] relative motion-safe:animate-spin-slow">
+              <Image
+                src="/spinner.webp"
+                fill
+                objectFit="cover"
+                alt="spinning badge"
+              />
+            </div>
           </motion.div>
         </div>
         <motion.div
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1, ease: [0.83, 0, 0.17, 1] }}
-          className="absolute top-36 right-28 rounded-2xl overflow-hidden">
-          <Image src="/about.webp" width={350} height={300} alt="about" />
+          className="absolute sm:top-36 sm:right-28 bottom-10 ">
+          <div className="relative w-[90vw] sm:w-[25vw] h-36 sm:h-[30vh] rounded-2xl overflow-hidden">
+            <Image src="/about.webp" fill objectFit="cover" alt="about" />
+          </div>
         </motion.div>
       </section>
-      <section className="px-10 py-32">
-        <div className="grid grid-cols-2 gap-20 border-t border-zinc-600 py-20">
+      <section className="py-section px-mediumSection">
+        <div className="grid sm:grid-cols-2 gap-base ">
           <div className="">
-            <h5 className="text-zinc-400">
+            <p className="text-zinc-400 text-para">
               Graphly was founded with a passion for design and a vision to
               empower businesses through visually stunning and functional
               solutions. Our team combines years of expertise with a bold
               entrepreneurial spirit, driven by one mission: to transform ideas
               into powerful digital experiences.
-            </h5>
+            </p>
             <div className="w-full h-[70vh] mt-20 overflow-hidden flex items-center justify-end rounded-3xl">
               <Image
                 src="/about2.webp"
@@ -63,7 +67,7 @@ const AboutUs = () => {
               />
             </div>
           </div>
-          <div>
+          <div className="sm:mt-0 mt-10 pb-mediumSection">
             <p className="text-[calc(theme(fontSize.desc)*0.5)]">
               Our vision at Graphly is to become a global leader in innovative
               design and digital transformation, empowering businesses of all

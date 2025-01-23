@@ -7,10 +7,10 @@ import Button from "./Button";
 
 const Footer = () => {
   return (
-    <footer className="px-10 pt-20 rounded-ss-[4rem] rounded-se-[4rem] bg-zinc-100">
-      <div className="flex justify-between items-center">
+    <footer className="px-mediumSection pt-20 rounded-ss-[4rem] rounded-se-[4rem] bg-zinc-100">
+      <div className="flex flex-wrap gap-10 justify-between items-center pb-mediumSection">
         <h2 className="text-desc font-bold text-zinc-900">
-          <TextAnimation text="Let's Connect" once={true} delayIndex={8} />
+          <TextAnimation text="Let's Connect" once={true} delayIndex={2} />
         </h2>
         <Button isButton>
           <Link href="/contact" className="rounded-full px-3 flex items-center">
@@ -41,7 +41,7 @@ const Footer = () => {
           </Link>
         </Button>
       </div>
-      <div className="grid grid-cols-2 py-16 mt-16 border-y border-zinc-900">
+      <div className="grid sm:grid-cols-2 py-mediumSection border-y border-zinc-900">
         <div>
           <Image
             src="/graphly.webp"
@@ -49,7 +49,7 @@ const Footer = () => {
             height={220}
             alt="Company Logo"
           />
-          <div className="text-zinc-900 mt-5">
+          <div className="text-zinc-900 mt-5 text-para">
             <TextMaskAnimation
               phrases={[
                 "Graphly is your partner in creating eye-catching and practical designs. We focus on",
@@ -58,7 +58,7 @@ const Footer = () => {
               ]}
             />
           </div>
-          <div className="flex items-center gap-3 mt-5">
+          <div className="flex flex-wrap items-center gap-3 mt-5">
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -113,8 +113,8 @@ const Footer = () => {
             </span>
           </div>
         </div>
-        <div className="text-zinc-900 grid grid-cols-3">
-          <div className="col-start-2">
+        <div className="text-zinc-900 grid sm:grid-cols-3 grid-flow-col mt-10 sm:mt-0">
+          <div className="col-start-2 hidden sm:block">
             <h5 className="font-semibold text-orange-600">Navigation</h5>
             <ul className="mt-5 flex flex-col gap-3">
               <li>
@@ -147,7 +147,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-start-4">
+          <div className="sm:col-start-4 ">
             <h5 className="font-semibold text-orange-600">Contact</h5>
             <ul className="mt-5 flex flex-col gap-3">
               <li>
@@ -188,14 +188,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="text-zinc-900 flex justify-between items-center py-10">
-        <p>Copyright© 2024 Graphlyco. All Rights Reserved.</p>
-        <Link
-          href="#"
-          onClick={(e) => handleNavigation(e, "/works")}
-          className="relative inline-flex after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-zinc-900 after:max-w-0 hover:after:max-w-full after:transition-all after:duration-500 after:ease-[cubic-bezier(0.83,0,0.17,1)]">
-          Terms & Conditions
-        </Link>
+      <div className="text-zinc-900 py-mediumSection">
+        <p>© 2024 Graphlyco. All Rights Reserved.</p>
       </div>
     </footer>
   );

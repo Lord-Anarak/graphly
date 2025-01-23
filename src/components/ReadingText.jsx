@@ -5,7 +5,7 @@ const ReadingText = ({ paragraph }) => {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["start 0.9", "start 0.25"],
+    offset: ["start 0.8", "end 0.4"],
   });
 
   const words = paragraph.split(" ");
@@ -28,7 +28,7 @@ const Word = ({ children, progress, range }) => {
   const amount = range[1] - range[0];
   const step = amount / children.length;
   return (
-    <span className="relative mr-2 mt-3">
+    <span className="relative mr-1 sm:mr-2 mt-2">
       {children.split("").map((char, i) => {
         const start = range[0] + i * step;
         const end = range[0] + (i + 1) * step;

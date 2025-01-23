@@ -109,15 +109,15 @@ const Services = () => {
   return (
     <PageTransition>
       <Header />
-      <section className="min-h-screen bg-heroBg bg-no-repeat px-10 pt-36  flex flex-col justify-between">
-        <div className="uppercase relative mt-20">
-          <h1 className="ml-36">
+      <section className="min-h-screen bg-heroBg bg-no-repeat px-mediumSection pt-36 flex flex-col justify-between">
+        <div className="uppercase relative sm:mt-20 mt-36">
+          <h1 className="sm:ml-36">
             <TextAnimation text="Empowering" once delayIndex={1} />
           </h1>
-          <h1 className="ml-72">
+          <h1 className="sm:ml-72">
             <TextAnimation text="Brands" once delayIndex={3} />
           </h1>
-          <h1 className="ml-96">
+          <h1 className="sm:ml-96">
             <TextAnimation text="Everywhere" once delayIndex={2} />
           </h1>
 
@@ -125,29 +125,37 @@ const Services = () => {
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, ease: [0.83, 0, 0.17, 1] }}
-            className="absolute left-0 -bottom-5 motion-safe:animate-spin-slow">
-            <Image
-              src="/spinner.webp"
-              width={150}
-              height={150}
-              alt="spinning badge"
-            />
+            className="absolute left-0 sm:-bottom-5 bottom-40">
+            <div className="w-[calc(max(120px,15vw))] h-[calc(max(120px,15vw))] relative motion-safe:animate-spin-slow">
+              <Image
+                src="/spinner.webp"
+                fill
+                objectFit="cover"
+                alt="spinning badge"
+              />
+            </div>
           </motion.div>
         </div>
         <motion.div
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1, ease: [0.83, 0, 0.17, 1] }}
-          className="absolute top-36 right-28 rounded-2xl overflow-hidden">
-          <Image src="/about.webp" width={350} height={300} alt="about" />
+          className="absolute sm:top-36 sm:right-28 bottom-10 ">
+          <div className="relative w-[90vw] sm:w-[25vw] h-36 sm:h-[30vh] rounded-2xl overflow-hidden">
+            <Image src="/about.webp" fill objectFit="cover" alt="about" />
+          </div>
         </motion.div>
       </section>
-      <section className="py-section px-10 grid grid-cols-2 gap-base">
+      <section className="py-section px-mediumSection grid sm:grid-cols-2 gap-base">
         <div>
           <h2 className="uppercase leading-none font-semibold">
-            <TextMaskAnimation phrases={["Brand", "identity &", "Strategy"]} />
+            <span className="sm:text-[1em] text-[0.7em]">
+              <TextMaskAnimation
+                phrases={["Brand", "identity &", "Strategy"]}
+              />
+            </span>
           </h2>
-          <p className="mt-20">
+          <p className="sm:mt-20 mt-10">
             Helping you uncover your brand’s purpose and uniqueness – and the
             game plan to deliver it to win your customers’ devotion.
           </p>
@@ -198,12 +206,14 @@ const Services = () => {
           </div>
         </div>
       </section>
-      <section className="py-mediumSection px-10 grid grid-cols-2 gap-base">
-        <div className="flex flex-col justify-between pb-10">
+      <section className="p-mediumSection grid sm:grid-cols-2 gap-base">
+        <div>
           <h2 className="uppercase leading-none font-semibold">
-            <TextMaskAnimation phrases={["Content &", "Campaigns"]} />
+            <span className="sm:text-[1em] text-[0.7em]">
+              <TextMaskAnimation phrases={["Content &", "Campaigns"]} />
+            </span>
           </h2>
-          <p className="mt-20">
+          <p className="sm:mt-20 mt-10">
             Creating and implementing a multi-platform campaign strategy and
             content that is based on consumer preferences and trends, to drive
             engagement and conversions.
@@ -253,12 +263,14 @@ const Services = () => {
           </div>
         </div>
       </section>
-      <section className="py-mediumSection px-10 grid grid-cols-2 gap-base">
-        <div className="flex flex-col justify-between pb-10">
+      <section className="p-mediumSection pb-section grid sm:grid-cols-2 gap-base">
+        <div>
           <h2 className="uppercase leading-none font-semibold">
-            <TextMaskAnimation phrases={["Digital &", "Web"]} />
+            <span className="sm:text-[1em] text-[0.7em]">
+              <TextMaskAnimation phrases={["Digital", "& Web"]} />
+            </span>
           </h2>
-          <p>
+          <p className="sm:mt-20 mt-10">
             Designing engaging digital experiences that combine brand strategy
             and creativity with UX insights to deliver functionality and ease of
             use. Always cutting-edge.

@@ -69,7 +69,7 @@ export function FocusCards({ cards, className }) {
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2 gap-[calc(theme(gap.base)*2)] mx-auto md:px-8 w-full",
+        "grid grid-cols-1 md:grid-cols-2 gap-[calc(theme(gap.base)*2)] w-full",
         className
       )}>
       {cards.map((card, index) => (

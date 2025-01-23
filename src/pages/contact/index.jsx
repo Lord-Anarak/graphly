@@ -117,13 +117,13 @@ const Contact = () => {
     <PageTransition>
       <div className="bg-zinc-100">
         <Header />
-        <section className="grid grid-cols-2 py-section pt-[30vh] px-mediumSection gap-base">
+        <section className="grid sm:grid-cols-2 py-section pt-[30vh] px-mediumSection gap-base">
           <div className="flex justify-between flex-col">
             <h2 className="text-desc uppercase text-zinc-900 font-medium">
               <TextAnimation text="Need a fresh" once />
               <TextAnimation text="Perspective?" once />
             </h2>
-            <p className="text-zinc-900 text-[1.2em] font-medium">
+            <p className="text-zinc-900 text-[1.2em] font-medium mt-5 sm:mt-0">
               <TextMaskAnimation
                 phrases={[
                   "We engage in projects of varying scales – from helping startups to",
@@ -133,6 +133,7 @@ const Contact = () => {
             </p>
           </div>
           <motion.div
+            className="mt-10 sm:mt-0"
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{

@@ -10,15 +10,15 @@ const services = [
 
 const OurServices = () => {
   return (
-    <section className="p-10">
+    <section className="p-mediumSection overflow-hidden">
       <h5 className="uppercase font-light">Our Services</h5>
-      <div className="mt-20 border-t border-zinc-700">
+      <div className="sm:mt-20 mt-10 border-t border-zinc-700">
         <ul>
           {services.map((service, i) => (
             <li
               key={i}
-              className="py-10 px-5 border-b border-zinc-700 text-desc uppercase">
-              <span className="mr-20">0{i + 1}/</span>
+              className="py-10 sm:px-5 px-0 border-b border-zinc-700 text-desc uppercase">
+              <span className="sm:mr-20 mr-5">0{i + 1}/</span>
               {service}
             </li>
           ))}
