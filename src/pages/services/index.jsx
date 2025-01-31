@@ -170,7 +170,9 @@ const Services = () => {
                 phrases={[
                   "Brand",
                   "identity &",
-                  <span className="gradient-text">Strategy</span>,
+                  <span key={"Strategy"} className="gradient-text">
+                    Strategy
+                  </span>,
                 ]}
               />
             </span>
@@ -233,7 +235,9 @@ const Services = () => {
               <TextMaskAnimation
                 phrases={[
                   "Content &",
-                  <span className="gradient-text">Campaigns</span>,
+                  <span key={"Campaigns"} className="gradient-text">
+                    Campaigns
+                  </span>,
                 ]}
               />
             </span>
@@ -295,7 +299,9 @@ const Services = () => {
               <TextMaskAnimation
                 phrases={[
                   "Digital",
-                  <span className="gradient-text">& Web</span>,
+                  <span key={"Web"} className="gradient-text">
+                    & Web
+                  </span>,
                 ]}
               />
             </span>
