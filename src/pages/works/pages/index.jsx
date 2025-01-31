@@ -41,7 +41,7 @@ const Pages = () => {
   return (
     <PageTransition>
       <Header />
-      <section className="min-h-screen bg-heroBg bg-no-repeat px-10 pt-36  flex flex-col justify-between">
+      <section className="min-h-screen bg-heroBg bg-no-repeat px-mediumSection pt-36 flex flex-col justify-between">
         <div className="uppercase relative mt-20">
           <p className="px-6 p-4 border border-zinc-100 inline-flex rounded-full">
             Case Study
@@ -50,11 +50,9 @@ const Pages = () => {
             <h1>
               <TextAnimation text="Pages" once delayIndex={1} />
             </h1>
-            <span>
+            <span className="w-10 h-10 sm:w-24 sm:h-24">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="93"
-                height="93"
                 viewBox="0 0 93 93"
                 fill="none">
                 <path
@@ -78,14 +76,14 @@ const Pages = () => {
           </motion.div>
         </div>
       </section>
-      <section className="px-10 pb-20 ">
-        <div className="rounded-3xl w-full h-[calc(100vh-50px)] overflow-hidden relative">
+      <section className="p-mediumSection sm:pb-20 sm:mt-0 -mt-24">
+        <div className="rounded-3xl w-full sm:h-[calc(100vh-50px)] h-96 overflow-hidden relative">
           <Image src="/works/brand/018.webp" fill objectFit="cover" />
         </div>
       </section>
-      <section className="py-mediumSection px-10 ">
-        <div className="grid grid-cols-2">
-          <div className="flex flex-col justify-between border-2 border-gray-300 rounded-xl w-2/3 py-12 items-center">
+      <section className="p-mediumSection">
+        <div className="grid sm:grid-cols-2">
+          <div className="flex flex-col justify-between border-2 border-gray-300 rounded-xl sm:w-2/3 py-12 items-center">
             <h3 className="uppercase text-desc">
               <TextMaskAnimation phrases={["Service"]} />
             </h3>
@@ -95,11 +93,11 @@ const Pages = () => {
             </h3>
             <p className="opacity-70 text-[1.5em]">Industry</p>
           </div>
-          <div>
+          <div className="sm:mt-0 mt-10">
             <h3 className="uppercase text-desc">
               <TextMaskAnimation phrases={["Overview"]} />
             </h3>
-            <p className="opacity-70 mt-3 text-[1.5em]">
+            <p className="opacity-70 mt-3 sm:text-[1.5em] text-[1.3em]">
               <TextMaskAnimation
                 phrases={[
                   "This branding project was centered on creating a distinct",
@@ -113,7 +111,7 @@ const Pages = () => {
           </div>
         </div>
       </section>
-      <section className="px-10 py-section grid grid-cols-2 gap-base">
+      <section className="p-mediumSection grid sm:grid-cols-2 gap-base">
         <div className="relative rounded-lg overflow-hidden aspect-square">
           <Image src="/works/brand/015.webp" fill objectFit="cover" />
         </div>
@@ -148,13 +146,13 @@ const Pages = () => {
           </div>
         </div>
       </section>
-      <section className="py-mediumSection px-10">
+      <section className="p-mediumSection">
         <div>
           <h2 className="uppercase text-desc leading-none font-normal">
             <TextMaskAnimation phrases={["Design Process"]} />
           </h2>
         </div>
-        <div className="pt-16 px-2">
+        <div className="sm:pt-16 pt-10 sm:px-2">
           <div>
             <motion.ul
               initial={{ y: 50, opacity: 0 }}
@@ -208,7 +206,7 @@ const Pages = () => {
           </div>
         </div>
       </section>
-      <section className="py-mediumSection px-10 grid grid-cols-2 gap-[calc(theme(gap.base)*2)]">
+      <section className="p-mediumSection grid sm:grid-cols-2 gap-[calc(theme(gap.base)*2)]">
         <div>
           <h2 className="text-desc font-normal uppercase">
             &quot;We really appreciate their dedication to quality.&quot;
@@ -225,13 +223,13 @@ const Pages = () => {
             rationally encounter.&quot;
           </p>
           <div>
-            <h3 className="uppercase">Name</h3>
+            <h3 className="uppercase mt-5 sm:mt-0">Name</h3>
             <p>Director</p>
           </div>
         </div>
       </section>
-      <section className="px-10 ">
-        <div className="border-t border-gray-500 py-mediumSection grid grid-cols-2 gap-[calc(theme(gap.base)*2)]">
+      <section className="px-mediumSection sm:mt-0 mt-10">
+        <div className="border-t border-gray-500 sm:py-mediumSection py-10 grid sm:grid-cols-2 gap-[calc(theme(gap.base)*2)]">
           <h2 className="text-desc font-normal uppercase">Results</h2>
           <p className="text-[1.2em]">
             The final logo successfully embodies the brand&apos;s vision of
@@ -242,7 +240,7 @@ const Pages = () => {
             visual appeal and clarity.
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-base pb-section">
+        <div className="grid sm:grid-cols-2 gap-base pb-section">
           <div className="aspect-square relative rounded-xl overflow-hidden">
             <Image src="/works/brand/016.webp" fill objectFit="cover" />
           </div>

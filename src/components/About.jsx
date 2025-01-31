@@ -3,7 +3,7 @@ import ReadingText from "./ReadingText";
 
 const About = () => {
   return (
-    <section className="sm:px-10 px-mediumSection pb-section">
+    <section className="px-mediumSection pb-section">
       <h5 className="uppercase font-light">What we do</h5>
       <br />
       <div className="text-desc leading-tight">

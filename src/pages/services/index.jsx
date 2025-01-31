@@ -6,7 +6,7 @@ import TextAnimation from "@/components/TextAnimation";
 import TextMaskAnimation from "@/components/TextMaskAnimation";
 import { motion } from "motion/react";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const branding = [
   {
@@ -103,13 +103,27 @@ const content = [
 ];
 
 const Services = () => {
+  const scrollContainer = useRef(null);
+
+  useEffect(() => {
+    (async () => {
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+      const scroll = new LocomotiveScroll({
+        el: scrollContainer.current,
+        smooth: true,
+      });
+    })();
+  }, []);
   const [activeBranding, setActiveBranding] = useState(0);
   const [activeWeb, setActiveWeb] = useState(0);
   const [activeContent, setActiveContent] = useState(0);
   return (
     <PageTransition>
       <Header />
-      <section className="min-h-screen bg-heroBg bg-no-repeat px-mediumSection pt-36 flex flex-col justify-between">
+      <section
+        className="min-h-screen bg-heroBg bg-no-repeat px-mediumSection pt-36 flex flex-col justify-between"
+        ref={scrollContainer}
+        data-scroll-section>
         <div className="uppercase relative sm:mt-20 mt-36">
           <h1 className="sm:ml-36">
             <TextAnimation text="Empowering" once delayIndex={1} />
@@ -140,9 +154,11 @@ const Services = () => {
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1, ease: [0.83, 0, 0.17, 1] }}
-          className="absolute sm:top-36 sm:right-28 bottom-10 ">
+          className="absolute sm:top-60 sm:right-20 bottom-10 "
+          data-scroll
+          data-scroll-speed="0.2">
           <div className="relative w-[90vw] sm:w-[25vw] h-36 sm:h-[30vh] rounded-2xl overflow-hidden">
-            <Image src="/about.webp" fill objectFit="cover" alt="about" />
+            <Image src="/works/014.webp" fill objectFit="cover" alt="about" />
           </div>
         </motion.div>
       </section>
@@ -151,7 +167,11 @@ const Services = () => {
           <h2 className="uppercase leading-none font-semibold">
             <span className="sm:text-[1em] text-[0.7em]">
               <TextMaskAnimation
-                phrases={["Brand", "identity &", "Strategy"]}
+                phrases={[
+                  "Brand",
+                  "identity &",
+                  <span className="gradient-text">Strategy</span>,
+                ]}
               />
             </span>
           </h2>
@@ -209,8 +229,13 @@ const Services = () => {
       <section className="p-mediumSection grid sm:grid-cols-2 gap-base">
         <div>
           <h2 className="uppercase leading-none font-semibold">
-            <span className="sm:text-[1em] text-[0.7em]">
-              <TextMaskAnimation phrases={["Content &", "Campaigns"]} />
+            <span className="sm:text-[0.98em] text-[0.7em]">
+              <TextMaskAnimation
+                phrases={[
+                  "Content &",
+                  <span className="gradient-text">Campaigns</span>,
+                ]}
+              />
             </span>
           </h2>
           <p className="sm:mt-20 mt-10">
@@ -267,7 +292,12 @@ const Services = () => {
         <div>
           <h2 className="uppercase leading-none font-semibold">
             <span className="sm:text-[1em] text-[0.7em]">
-              <TextMaskAnimation phrases={["Digital", "& Web"]} />
+              <TextMaskAnimation
+                phrases={[
+                  "Digital",
+                  <span className="gradient-text">& Web</span>,
+                ]}
+              />
             </span>
           </h2>
           <p className="sm:mt-20 mt-10">

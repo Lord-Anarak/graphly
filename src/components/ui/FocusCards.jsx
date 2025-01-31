@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
+import { FollowerPointerCard } from "./following-pointer";
 
 const CardContent = ({ card, hovered, index }) => (
   <>
@@ -48,7 +49,9 @@ export const Card = React.memo(
           href={card.link}
           className="block cursor-pointer"
           {...mouseEventProps}>
-          <CardContent card={card} hovered={hovered} index={index} />
+          <FollowerPointerCard title={"View"}>
+            <CardContent card={card} hovered={hovered} index={index} />
+          </FollowerPointerCard>
         </Link>
       );
     }

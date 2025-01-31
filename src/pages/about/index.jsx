@@ -1,13 +1,24 @@
-import About from "@/components/About";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
+import ReadingText from "@/components/ReadingText";
 import TextAnimation from "@/components/TextAnimation";
 import { motion } from "motion/react";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 const AboutUs = () => {
+  const scrollContainer = useRef(null);
+
+  useEffect(() => {
+    (async () => {
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+      const scroll = new LocomotiveScroll({
+        el: scrollContainer.current,
+        smooth: true,
+      });
+    })();
+  }, []);
   return (
     <PageTransition>
       <Header />
@@ -49,37 +60,46 @@ const AboutUs = () => {
         </motion.div>
       </section>
       <section className="py-section px-mediumSection">
-        <div className="grid sm:grid-cols-2 gap-base ">
-          <div className="">
-            <p className="text-zinc-400 text-para">
+        <div
+          className="grid sm:grid-cols-2 gap-base"
+          ref={scrollContainer}
+          data-scroll-section>
+          <div
+            className="w-full h-[70vh] overflow-hidden flex items-center justify-end rounded-3xl"
+            data-scroll
+            data-scroll-speed="-0.1">
+            <Image
+              src="/about2.webp"
+              width={700}
+              height={500}
+              alt="Creative table with objects"
+            />
+          </div>
+          <div className="sm:mt-0 mt-10 pb-mediumSection flex justify-center items-center">
+            <p className=" text-[calc(theme(fontSize.desc)*0.5)]">
               Graphly was founded with a passion for design and a vision to
               empower businesses through visually stunning and functional
               solutions. Our team combines years of expertise with a bold
               entrepreneurial spirit, driven by one mission: to transform ideas
               into powerful digital experiences.
             </p>
-            <div className="w-full h-[70vh] mt-20 overflow-hidden flex items-center justify-end rounded-3xl">
-              <Image
-                src="/about2.webp"
-                width={700}
-                height={500}
-                alt="Creative table with objects"
-              />
-            </div>
-          </div>
-          <div className="sm:mt-0 mt-10 pb-mediumSection">
-            <p className="text-[calc(theme(fontSize.desc)*0.5)]">
-              Our vision at Graphly is to become a global leader in innovative
-              design and digital transformation, empowering businesses of all
-              sizes to unlock their full potential. We strive to create
-              impactful solutions that blend creativity and functionality,
-              leaving a lasting impression and driving meaningful results in an
-              ever-evolving digital world.
-            </p>
           </div>
         </div>
       </section>
-      <About />
+      <section className="px-mediumSection pb-section">
+        <h5 className="uppercase font-light">Our Vision</h5>
+        <br />
+        <div className="text-[calc(theme(fontSize.desc)*0.7)] leading-tight">
+          <ReadingText
+            paragraph="Our vision at Graphly is to become a global leader in innovative
+          design and digital transformation, empowering businesses of all sizes
+          to unlock their full potential. We strive to create impactful
+          solutions that blend creativity and functionality, leaving a lasting
+          impression and driving meaningful results in an ever-evolving digital
+          world..."
+          />
+        </div>
+      </section>
       <Footer />
     </PageTransition>
   );

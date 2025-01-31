@@ -5,7 +5,7 @@ import Showreel from "@/components/Showreel";
 import About from "@/components/About";
 import InfiniteText from "@/components/InfiniteText";
 import Strategies from "@/components/Strategies";
-import OurServices from "@/components/OurServices";
+import OurApproach from "@/components/OurApproach";
 import RecentWorks from "@/components/RecentWorks";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -21,7 +21,7 @@ export default function Home() {
         <About />
         <InfiniteText />
         <Strategies />
-        <OurServices />
+        <OurApproach />
         <RecentWorks />
         <Footer />
       </main>

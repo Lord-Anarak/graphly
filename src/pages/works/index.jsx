@@ -5,7 +5,7 @@ import TextAnimation from "@/components/TextAnimation";
 import { FocusCards } from "@/components/ui/FocusCards";
 import { motion } from "motion/react";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 const AllWorks = [
   {
@@ -92,10 +92,24 @@ const AllWorks = [
 ];
 
 const Works = () => {
+  const scrollContainer = useRef(null);
+
+  useEffect(() => {
+    (async () => {
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+      const scroll = new LocomotiveScroll({
+        el: scrollContainer.current,
+        smooth: true,
+      });
+    })();
+  }, []);
   return (
     <PageTransition>
       <Header />
-      <section className="min-h-screen bg-heroBg bg-no-repeat px-mediumSection pt-36 flex flex-col justify-between">
+      <section
+        className="min-h-screen bg-heroBg bg-no-repeat px-mediumSection pt-36 flex flex-col justify-between"
+        ref={scrollContainer}
+        data-scroll-section>
         <div className="uppercase relative sm:mt-20 mt-36">
           <h1 className="sm:ml-36">
             <TextAnimation text="Showcase" once delayIndex={1} />
@@ -126,9 +140,11 @@ const Works = () => {
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1, ease: [0.83, 0, 0.17, 1] }}
-          className="absolute sm:top-36 sm:right-28 bottom-10 ">
+          className="absolute sm:top-52 sm:right-28 bottom-10 "
+          data-scroll
+          data-scroll-speed="0.2">
           <div className="relative w-[90vw] sm:w-[25vw] h-36 sm:h-[30vh] rounded-2xl overflow-hidden">
-            <Image src="/about.webp" fill objectFit="cover" alt="about" />
+            <Image src="/works/016.webp" fill objectFit="cover" alt="about" />
           </div>
         </motion.div>
       </section>

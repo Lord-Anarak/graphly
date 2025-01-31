@@ -8,9 +8,10 @@ const Works = [
     src: "/works/002.webp",
   },
   {
-    title: "Sauvage Perfume",
-    desc: "Product design | 3D Model | Creative Animation",
-    src: "/works/003.webp",
+    title: "Pages",
+    desc: "Brand Strategy & Voice, Branding & Design",
+    src: "/works/brand/015.webp",
+    link: "/works/pages",
   },
   {
     title: "Sauvage Perfume",

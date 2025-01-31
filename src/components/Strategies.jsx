@@ -10,8 +10,8 @@ const benifits = [
 
 const Strategies = () => {
   return (
-    <section className="py-section px-mediumSection flex flex-wrap justify-between items-start gap-base overflow-hidden">
-      <div className="text-desc leading-tight sm:w-1/2">
+    <section className="py-section px-mediumSection grid sm:grid-cols-2 justify-between items-start gap-base overflow-hidden">
+      <div className="text-desc leading-tight uppercase">
         <TextMaskAnimation
           phrases={[
             "Strategies for building Growing and Managing",
@@ -19,8 +19,8 @@ const Strategies = () => {
           ]}
         />
       </div>
-      <div className="sm:mt-5 mt-5">
-        <div className="whitespace-nowrap text-para">
+      <div className=" mt-2">
+        <div className="whitespace-nowrap text-[calc(theme(fontSize.desc)*0.4)]">
           <TextMaskAnimation
             phrases={[
               "Must explain to you how all this mistaken idea of",
@@ -35,7 +35,7 @@ const Strategies = () => {
             ]}
           />
         </div>
-        <div className="grid sm:grid-cols-2 gap-5 text-[1em] mt-10">
+        <div className="grid sm:grid-cols-2 gap-5 text-para mt-10">
           {benifits.map((benifit, i) => (
             <p key={i} className="flex items-center">
               <span className="mr-2">
