@@ -175,7 +175,7 @@ const Works = () => {
   return (
     <>
       <Head>
-        <title>Our Work - Graphly's Digital Projects & Case Studies</title>
+        <title>Our Work - Graphly&apos;s Digital Projects & Case Studies</title>
         <meta
           name="description"
           content="Explore Graphly's portfolio of digital design, branding, and marketing projects. See how we help businesses grow with impactful designs."

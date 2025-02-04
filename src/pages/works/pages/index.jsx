@@ -78,7 +78,12 @@ const Pages = () => {
       </section>
       <section className="p-mediumSection sm:pb-20 sm:mt-0 -mt-24">
         <div className="rounded-3xl w-full sm:h-[calc(100vh-50px)] h-96 overflow-hidden relative">
-          <Image src="/works/brand/018.webp" fill objectFit="cover" />
+          <Image
+            src="/works/brand/018.webp"
+            fill
+            objectFit="cover"
+            alt="pages"
+          />
         </div>
       </section>
       <section className="p-mediumSection">
@@ -113,7 +118,12 @@ const Pages = () => {
       </section>
       <section className="p-mediumSection grid sm:grid-cols-2 gap-base">
         <div className="relative rounded-lg overflow-hidden aspect-square">
-          <Image src="/works/brand/015.webp" fill objectFit="cover" />
+          <Image
+            src="/works/brand/015.webp"
+            fill
+            objectFit="cover"
+            alt="pages"
+          />
         </div>
         <div className="py-section">
           <h3 className="uppercase text-desc">Client Brief</h3>
@@ -242,10 +252,20 @@ const Pages = () => {
         </div>
         <div className="grid sm:grid-cols-2 gap-base pb-section">
           <div className="aspect-square relative rounded-xl overflow-hidden">
-            <Image src="/works/brand/016.webp" fill objectFit="cover" />
+            <Image
+              src="/works/brand/016.webp"
+              fill
+              objectFit="cover"
+              alt="pages"
+            />
           </div>
           <div className="aspect-square relative rounded-xl overflow-hidden">
-            <Image src="/works/brand/017.webp" fill objectFit="cover" />
+            <Image
+              src="/works/brand/017.webp"
+              fill
+              objectFit="cover"
+              alt="pages"
+            />
           </div>
         </div>
       </section>

@@ -5,6 +5,7 @@ import PageTransition from "@/components/PageTransition";
 import TextAnimation from "@/components/TextAnimation";
 import TextMaskAnimation from "@/components/TextMaskAnimation";
 import { motion } from "motion/react";
+import Head from "next/head";
 import React, { useState } from "react";
 
 const Contact = () => {
@@ -116,7 +117,7 @@ const Contact = () => {
   return (
     <>
       <Head>
-        <title>Contact Graphly - Let's Bring Your Vision to Life</title>
+        <title>Contact Graphly - Let&apos;s Bring Your Vision to Life</title>
         <meta
           name="description"
           content="Get in touch with Graphly for expert branding, web design, and digital marketing services. Let's collaborate!"
