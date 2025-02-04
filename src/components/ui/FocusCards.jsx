@@ -78,7 +78,7 @@ export function FocusCards({ cards, className, link }) {
       {cards.map((card, index) => {
         if (link) {
           return (
-            <Link href={link}>
+            <Link href={link} key={index}>
               <Card
                 key={index}
                 card={card}

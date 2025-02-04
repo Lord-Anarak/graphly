@@ -114,114 +114,141 @@ const Contact = () => {
   };
 
   return (
-    <PageTransition>
-      <div className="bg-zinc-100">
-        <Header />
-        <section className="grid sm:grid-cols-2 py-section pt-[30vh] px-mediumSection gap-base">
-          <div className="flex justify-between flex-col">
-            <h2 className="text-desc uppercase text-zinc-900 font-medium">
-              <TextAnimation text="Need a fresh" once />
-              <TextAnimation text="Perspective?" once />
-            </h2>
-            <p className="text-zinc-900 text-[1.2em] font-medium mt-5 sm:mt-0">
-              <TextMaskAnimation
-                phrases={[
-                  "We engage in projects of varying scales – from helping startups to",
-                  "global brands. Get in touch to see how we can help you.",
-                ]}
-              />
-            </p>
-          </div>
-          <motion.div
-            className="mt-10 sm:mt-0"
-            initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: 1.5,
-              delay: 0.3,
-              ease: [0.83, 0, 0.17, 1],
-            }}>
-            <form
-              onSubmit={handleSubmit}
-              className="flex flex-col text-zinc-900 font-medium">
-              <label htmlFor="name">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="John Doe"
-                className={`mt-3 bg-transparent border-b outline-none py-3 placeholder:text-2xl transition-colors duration-200 ${
-                  errors.name ? "border-red-500" : "border-zinc-400"
-                }`}
-              />
-              {errors.name && (
-                <span className="text-red-500 text-sm mt-1">{errors.name}</span>
-              )}
+    <>
+      <Head>
+        <title>Contact Graphly - Let's Bring Your Vision to Life</title>
+        <meta
+          name="description"
+          content="Get in touch with Graphly for expert branding, web design, and digital marketing services. Let's collaborate!"
+        />
+        <meta
+          name="keywords"
+          content="Graphly Contact, Get in Touch, Digital Agency, Branding Services"
+        />
+        <meta
+          property="og:title"
+          content="Contact Graphly - Let's Bring Your Vision to Life"
+        />
+        <meta
+          property="og:description"
+          content="Reach out to Graphly for branding, design, and marketing services. Let’s discuss your next project!"
+        />
+        <meta property="og:image" content="/og-contact.jpg" />
+        <meta property="og:url" content="https://graphlyco.com/contact" />
+        <link rel="canonical" href="https://graphlyco.com/contact" />
+      </Head>
 
-              <label htmlFor="email" className="mt-10">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="your@email.com"
-                className={`mt-3 bg-transparent outline-none border-b py-3 placeholder:text-2xl transition-colors duration-200 ${
-                  errors.email ? "border-red-500" : "border-zinc-400"
-                }`}
-              />
-              {errors.email && (
-                <span className="text-red-500 text-sm mt-1">
-                  {errors.email}
-                </span>
-              )}
+      <PageTransition>
+        <div className="bg-zinc-100">
+          <Header />
+          <section className="grid sm:grid-cols-2 py-section pt-[30vh] px-mediumSection gap-base">
+            <div className="flex justify-between flex-col">
+              <h2 className="text-desc uppercase text-zinc-900 font-medium">
+                <TextAnimation text="Need a fresh" once />
+                <TextAnimation text="Perspective?" once />
+              </h2>
+              <p className="text-zinc-900 text-[1.2em] font-medium mt-5 sm:mt-0">
+                <TextMaskAnimation
+                  phrases={[
+                    "We engage in projects of varying scales – from helping startups to",
+                    "global brands. Get in touch to see how we can help you.",
+                  ]}
+                />
+              </p>
+            </div>
+            <motion.div
+              className="mt-10 sm:mt-0"
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 1.5,
+                delay: 0.3,
+                ease: [0.83, 0, 0.17, 1],
+              }}>
+              <form
+                onSubmit={handleSubmit}
+                className="flex flex-col text-zinc-900 font-medium">
+                <label htmlFor="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="John Doe"
+                  className={`mt-3 bg-transparent border-b outline-none py-3 placeholder:text-2xl transition-colors duration-200 ${
+                    errors.name ? "border-red-500" : "border-zinc-400"
+                  }`}
+                />
+                {errors.name && (
+                  <span className="text-red-500 text-sm mt-1">
+                    {errors.name}
+                  </span>
+                )}
 
-              <label htmlFor="message" className="mt-10">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                className={`mt-3 bg-transparent outline-none border-b py-3 transition-colors duration-200 ${
-                  errors.message ? "border-red-500" : "border-zinc-400"
-                }`}
-                rows={3}
-              />
-              {errors.message && (
-                <span className="text-red-500 text-sm mt-1">
-                  {errors.message}
-                </span>
-              )}
+                <label htmlFor="email" className="mt-10">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="your@email.com"
+                  className={`mt-3 bg-transparent outline-none border-b py-3 placeholder:text-2xl transition-colors duration-200 ${
+                    errors.email ? "border-red-500" : "border-zinc-400"
+                  }`}
+                />
+                {errors.email && (
+                  <span className="text-red-500 text-sm mt-1">
+                    {errors.email}
+                  </span>
+                )}
 
-              <button
-                type="submit"
-                className="mt-10 w-36 text-zinc-100"
-                disabled={submitStatus.loading}>
-                <Button isButton>
-                  {submitStatus.loading ? "SENDING..." : "SEND FORM"}
-                </Button>
-              </button>
+                <label htmlFor="message" className="mt-10">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className={`mt-3 bg-transparent outline-none border-b py-3 transition-colors duration-200 ${
+                    errors.message ? "border-red-500" : "border-zinc-400"
+                  }`}
+                  rows={3}
+                />
+                {errors.message && (
+                  <span className="text-red-500 text-sm mt-1">
+                    {errors.message}
+                  </span>
+                )}
 
-              {submitStatus.message && (
-                <div
-                  className={`mt-4 text-sm ${
-                    submitStatus.isError ? "text-red-500" : "text-green-500"
-                  }`}>
-                  {submitStatus.message}
-                </div>
-              )}
-            </form>
-          </motion.div>
-        </section>
-        <Footer />
-      </div>
-    </PageTransition>
+                <button
+                  type="submit"
+                  className="mt-10 w-36 text-zinc-100"
+                  disabled={submitStatus.loading}>
+                  <Button isButton>
+                    {submitStatus.loading ? "SENDING..." : "SEND FORM"}
+                  </Button>
+                </button>
+
+                {submitStatus.message && (
+                  <div
+                    className={`mt-4 text-sm ${
+                      submitStatus.isError ? "text-red-500" : "text-green-500"
+                    }`}>
+                    {submitStatus.message}
+                  </div>
+                )}
+              </form>
+            </motion.div>
+          </section>
+          <Footer />
+        </div>
+      </PageTransition>
+    </>
   );
 };
 

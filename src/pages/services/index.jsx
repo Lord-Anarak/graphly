@@ -5,6 +5,7 @@ import PageTransition from "@/components/PageTransition";
 import TextAnimation from "@/components/TextAnimation";
 import TextMaskAnimation from "@/components/TextMaskAnimation";
 import { motion } from "motion/react";
+import Head from "next/head";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -118,246 +119,266 @@ const Services = () => {
   const [activeWeb, setActiveWeb] = useState(0);
   const [activeContent, setActiveContent] = useState(0);
   return (
-    <PageTransition>
-      <Header />
-      <section
-        className="min-h-screen bg-heroBg bg-no-repeat px-mediumSection pt-36 flex flex-col justify-between"
-        ref={scrollContainer}
-        data-scroll-section>
-        <div className="uppercase relative sm:mt-20 mt-36">
-          <h1 className="sm:ml-36">
-            <TextAnimation text="Empowering" once delayIndex={1} />
-          </h1>
-          <h1 className="sm:ml-72">
-            <TextAnimation text="Brands" once delayIndex={3} />
-          </h1>
-          <h1 className="sm:ml-96">
-            <TextAnimation text="Everywhere" once delayIndex={2} />
-          </h1>
+    <>
+      <Head>
+        <title>Our Services - Graphly | Digital Branding & Web Design</title>
+        <meta
+          name="description"
+          content="Explore Graphly's services in branding, web design, digital strategy, and UI/UX design to elevate your brand."
+        />
+        <meta
+          property="og:title"
+          content="Graphly Services - Creative Branding & Web Design"
+        />
+        <meta
+          property="og:description"
+          content="Discover our range of services, from web design to digital marketing."
+        />
+        <meta property="og:image" content="/og-image.jpg" />
+        <meta property="og:url" content="https://graphlyco.com/services" />
+        <link rel="canonical" href="https://graphlyco.com/services" />
+      </Head>
+      <PageTransition>
+        <Header />
+        <section
+          className="min-h-screen bg-heroBg bg-no-repeat px-mediumSection pt-36 flex flex-col justify-between"
+          ref={scrollContainer}
+          data-scroll-section>
+          <div className="uppercase relative sm:mt-20 mt-36">
+            <h1 className="sm:ml-36">
+              <TextAnimation text="Empowering" once delayIndex={1} />
+            </h1>
+            <h1 className="sm:ml-72">
+              <TextAnimation text="Brands" once delayIndex={3} />
+            </h1>
+            <h1 className="sm:ml-96">
+              <TextAnimation text="Everywhere" once delayIndex={2} />
+            </h1>
 
+            <motion.div
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1, ease: [0.83, 0, 0.17, 1] }}
+              className="absolute left-0 sm:-bottom-5 bottom-40">
+              <div className="w-[calc(max(120px,15vw))] h-[calc(max(120px,15vw))] relative motion-safe:animate-spin-slow">
+                <Image
+                  src="/spinner.webp"
+                  fill
+                  objectFit="cover"
+                  alt="spinning badge"
+                />
+              </div>
+            </motion.div>
+          </div>
           <motion.div
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, ease: [0.83, 0, 0.17, 1] }}
-            className="absolute left-0 sm:-bottom-5 bottom-40">
-            <div className="w-[calc(max(120px,15vw))] h-[calc(max(120px,15vw))] relative motion-safe:animate-spin-slow">
-              <Image
-                src="/spinner.webp"
-                fill
-                objectFit="cover"
-                alt="spinning badge"
-              />
+            className="absolute sm:top-60 sm:right-20 bottom-10 "
+            data-scroll
+            data-scroll-speed="0.2">
+            <div className="relative w-[90vw] sm:w-[25vw] h-36 sm:h-[30vh] rounded-2xl overflow-hidden">
+              <Image src="/works/014.webp" fill objectFit="cover" alt="about" />
             </div>
           </motion.div>
-        </div>
-        <motion.div
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1, ease: [0.83, 0, 0.17, 1] }}
-          className="absolute sm:top-60 sm:right-20 bottom-10 "
-          data-scroll
-          data-scroll-speed="0.2">
-          <div className="relative w-[90vw] sm:w-[25vw] h-36 sm:h-[30vh] rounded-2xl overflow-hidden">
-            <Image src="/works/014.webp" fill objectFit="cover" alt="about" />
-          </div>
-        </motion.div>
-      </section>
-      <section className="py-section px-mediumSection grid sm:grid-cols-2 gap-base">
-        <div>
-          <h2 className="uppercase leading-none font-semibold">
-            <span className="sm:text-[1em] text-[0.7em]">
-              <TextMaskAnimation
-                phrases={[
-                  "Brand",
-                  "identity &",
-                  <span key={"Strategy"} className="gradient-text">
-                    Strategy
-                  </span>,
-                ]}
-              />
-            </span>
-          </h2>
-          <p className="sm:mt-20 mt-10">
-            Helping you uncover your brand’s purpose and uniqueness – and the
-            game plan to deliver it to win your customers’ devotion.
-          </p>
-        </div>
-        <div className="pt-5">
+        </section>
+        <section className="py-section px-mediumSection grid sm:grid-cols-2 gap-base">
           <div>
-            <motion.ul
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, ease: [0.83, 0, 0.17, 1] }}>
-              {branding.map(({ title, description }, i) => (
-                <motion.li
-                  key={i}
-                  className={`pb-5 ${
-                    branding.length - 1 !== i ? "border-b" : ""
-                  } border-zinc-400 mb-5 cursor-pointer h-full overflow-hidden`}
-                  initial={false}
-                  animate={{ maxHeight: activeBranding === i ? 192 : 48 }}
-                  transition={{ duration: 0.5, ease: "linear" }}
-                  onClick={() =>
-                    setActiveBranding(activeBranding === i ? null : i)
-                  }>
-                  <h5 className="flex justify-between items-center pr-5 ">
-                    {title}
-                    <motion.div
-                      className="w-2 h-2 rounded-full"
-                      animate={{
-                        backgroundColor:
-                          activeBranding === i ? "#FF5722" : "#A1A1A1",
-                      }}
-                      transition={{ duration: 0.3 }}></motion.div>
-                  </h5>
-                  <motion.p
-                    className="mt-5"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={
-                      activeBranding === i
-                        ? { opacity: 0.7, y: 0 }
-                        : { opacity: 0, y: 10 }
-                    }
-                    transition={{ duration: 0.3 }}>
-                    {description}
-                  </motion.p>
-                </motion.li>
-              ))}
-            </motion.ul>
+            <h2 className="uppercase leading-none font-semibold">
+              <span className="sm:text-[1em] text-[0.7em]">
+                <TextMaskAnimation
+                  phrases={[
+                    "Brand",
+                    "identity &",
+                    <span key={"Strategy"} className="gradient-text">
+                      Strategy
+                    </span>,
+                  ]}
+                />
+              </span>
+            </h2>
+            <p className="sm:mt-20 mt-10">
+              Helping you uncover your brand’s purpose and uniqueness – and the
+              game plan to deliver it to win your customers’ devotion.
+            </p>
           </div>
-        </div>
-      </section>
-      <section className="p-mediumSection grid sm:grid-cols-2 gap-base">
-        <div>
-          <h2 className="uppercase leading-none font-semibold">
-            <span className="sm:text-[0.98em] text-[0.7em]">
-              <TextMaskAnimation
-                phrases={[
-                  "Content &",
-                  <span key={"Campaigns"} className="gradient-text">
-                    Campaigns
-                  </span>,
-                ]}
-              />
-            </span>
-          </h2>
-          <p className="sm:mt-20 mt-10">
-            Creating and implementing a multi-platform campaign strategy and
-            content that is based on consumer preferences and trends, to drive
-            engagement and conversions.
-          </p>
-        </div>
-        <div className="pt-5">
+          <div className="pt-5">
+            <div>
+              <motion.ul
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, ease: [0.83, 0, 0.17, 1] }}>
+                {branding.map(({ title, description }, i) => (
+                  <motion.li
+                    key={i}
+                    className={`pb-5 ${
+                      branding.length - 1 !== i ? "border-b" : ""
+                    } border-zinc-400 mb-5 cursor-pointer h-full overflow-hidden`}
+                    initial={false}
+                    animate={{ maxHeight: activeBranding === i ? 192 : 48 }}
+                    transition={{ duration: 0.5, ease: "linear" }}
+                    onClick={() =>
+                      setActiveBranding(activeBranding === i ? null : i)
+                    }>
+                    <h5 className="flex justify-between items-center pr-5 ">
+                      {title}
+                      <motion.div
+                        className="w-2 h-2 rounded-full"
+                        animate={{
+                          backgroundColor:
+                            activeBranding === i ? "#FF5722" : "#A1A1A1",
+                        }}
+                        transition={{ duration: 0.3 }}></motion.div>
+                    </h5>
+                    <motion.p
+                      className="mt-5"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={
+                        activeBranding === i
+                          ? { opacity: 0.7, y: 0 }
+                          : { opacity: 0, y: 10 }
+                      }
+                      transition={{ duration: 0.3 }}>
+                      {description}
+                    </motion.p>
+                  </motion.li>
+                ))}
+              </motion.ul>
+            </div>
+          </div>
+        </section>
+        <section className="p-mediumSection grid sm:grid-cols-2 gap-base">
           <div>
-            <motion.ul
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, ease: [0.83, 0, 0.17, 1] }}>
-              {content.map(({ title, description }, i) => (
-                <motion.li
-                  key={i}
-                  className={`pb-5 ${
-                    content.length - 1 !== i ? "border-b" : ""
-                  } border-zinc-400 mb-5 cursor-pointer h-full overflow-hidden`}
-                  initial={false}
-                  animate={{ maxHeight: activeWeb === i ? 192 : 48 }}
-                  transition={{ duration: 0.5, ease: "linear" }}
-                  onClick={() => setActiveWeb(activeWeb === i ? null : i)}>
-                  <h5 className="flex justify-between items-center pr-5 ">
-                    {title}
-                    <motion.div
-                      className="w-2 h-2 rounded-full"
-                      animate={{
-                        backgroundColor:
-                          activeWeb === i ? "#FF5722" : "#A1A1A1",
-                      }}
-                      transition={{ duration: 0.3 }}></motion.div>
-                  </h5>
-                  <motion.p
-                    className="mt-5"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={
-                      activeWeb === i
-                        ? { opacity: 0.7, y: 0 }
-                        : { opacity: 0, y: 10 }
-                    }
-                    transition={{ duration: 0.3 }}>
-                    {description}
-                  </motion.p>
-                </motion.li>
-              ))}
-            </motion.ul>
+            <h2 className="uppercase leading-none font-semibold">
+              <span className="sm:text-[0.98em] text-[0.7em]">
+                <TextMaskAnimation
+                  phrases={[
+                    "Content &",
+                    <span key={"Campaigns"} className="gradient-text">
+                      Campaigns
+                    </span>,
+                  ]}
+                />
+              </span>
+            </h2>
+            <p className="sm:mt-20 mt-10">
+              Creating and implementing a multi-platform campaign strategy and
+              content that is based on consumer preferences and trends, to drive
+              engagement and conversions.
+            </p>
           </div>
-        </div>
-      </section>
-      <section className="p-mediumSection pb-section grid sm:grid-cols-2 gap-base">
-        <div>
-          <h2 className="uppercase leading-none font-semibold">
-            <span className="sm:text-[1em] text-[0.7em]">
-              <TextMaskAnimation
-                phrases={[
-                  "Digital",
-                  <span key={"Web"} className="gradient-text">
-                    & Web
-                  </span>,
-                ]}
-              />
-            </span>
-          </h2>
-          <p className="sm:mt-20 mt-10">
-            Designing engaging digital experiences that combine brand strategy
-            and creativity with UX insights to deliver functionality and ease of
-            use. Always cutting-edge.
-          </p>
-        </div>
-        <div className="pt-5">
+          <div className="pt-5">
+            <div>
+              <motion.ul
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, ease: [0.83, 0, 0.17, 1] }}>
+                {content.map(({ title, description }, i) => (
+                  <motion.li
+                    key={i}
+                    className={`pb-5 ${
+                      content.length - 1 !== i ? "border-b" : ""
+                    } border-zinc-400 mb-5 cursor-pointer h-full overflow-hidden`}
+                    initial={false}
+                    animate={{ maxHeight: activeWeb === i ? 192 : 48 }}
+                    transition={{ duration: 0.5, ease: "linear" }}
+                    onClick={() => setActiveWeb(activeWeb === i ? null : i)}>
+                    <h5 className="flex justify-between items-center pr-5 ">
+                      {title}
+                      <motion.div
+                        className="w-2 h-2 rounded-full"
+                        animate={{
+                          backgroundColor:
+                            activeWeb === i ? "#FF5722" : "#A1A1A1",
+                        }}
+                        transition={{ duration: 0.3 }}></motion.div>
+                    </h5>
+                    <motion.p
+                      className="mt-5"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={
+                        activeWeb === i
+                          ? { opacity: 0.7, y: 0 }
+                          : { opacity: 0, y: 10 }
+                      }
+                      transition={{ duration: 0.3 }}>
+                      {description}
+                    </motion.p>
+                  </motion.li>
+                ))}
+              </motion.ul>
+            </div>
+          </div>
+        </section>
+        <section className="p-mediumSection pb-section grid sm:grid-cols-2 gap-base">
           <div>
-            <motion.ul
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, ease: [0.83, 0, 0.17, 1] }}>
-              {web.map(({ title, description }, i) => (
-                <motion.li
-                  key={i}
-                  className={`pb-5 ${
-                    web.length - 1 !== i ? "border-b" : ""
-                  } border-zinc-400 mb-5 cursor-pointer h-full overflow-hidden`}
-                  initial={false}
-                  animate={{ maxHeight: activeWeb === i ? 192 : 48 }}
-                  transition={{ duration: 0.5, ease: "linear" }}
-                  onClick={() => setActiveWeb(activeWeb === i ? null : i)}>
-                  <h5 className="flex justify-between items-center pr-5 ">
-                    {title}
-                    <motion.div
-                      className="w-2 h-2 rounded-full"
-                      animate={{
-                        backgroundColor:
-                          activeWeb === i ? "#FF5722" : "#A1A1A1",
-                      }}
-                      transition={{ duration: 0.3 }}></motion.div>
-                  </h5>
-                  <motion.p
-                    className="mt-5"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={
-                      activeWeb === i
-                        ? { opacity: 0.7, y: 0 }
-                        : { opacity: 0, y: 10 }
-                    }
-                    transition={{ duration: 0.3 }}>
-                    {description}
-                  </motion.p>
-                </motion.li>
-              ))}
-            </motion.ul>
+            <h2 className="uppercase leading-none font-semibold">
+              <span className="sm:text-[1em] text-[0.7em]">
+                <TextMaskAnimation
+                  phrases={[
+                    "Digital",
+                    <span key={"Web"} className="gradient-text">
+                      & Web
+                    </span>,
+                  ]}
+                />
+              </span>
+            </h2>
+            <p className="sm:mt-20 mt-10">
+              Designing engaging digital experiences that combine brand strategy
+              and creativity with UX insights to deliver functionality and ease
+              of use. Always cutting-edge.
+            </p>
           </div>
-        </div>
-      </section>
-      <Footer />
-    </PageTransition>
+          <div className="pt-5">
+            <div>
+              <motion.ul
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, ease: [0.83, 0, 0.17, 1] }}>
+                {web.map(({ title, description }, i) => (
+                  <motion.li
+                    key={i}
+                    className={`pb-5 ${
+                      web.length - 1 !== i ? "border-b" : ""
+                    } border-zinc-400 mb-5 cursor-pointer h-full overflow-hidden`}
+                    initial={false}
+                    animate={{ maxHeight: activeWeb === i ? 192 : 48 }}
+                    transition={{ duration: 0.5, ease: "linear" }}
+                    onClick={() => setActiveWeb(activeWeb === i ? null : i)}>
+                    <h5 className="flex justify-between items-center pr-5 ">
+                      {title}
+                      <motion.div
+                        className="w-2 h-2 rounded-full"
+                        animate={{
+                          backgroundColor:
+                            activeWeb === i ? "#FF5722" : "#A1A1A1",
+                        }}
+                        transition={{ duration: 0.3 }}></motion.div>
+                    </h5>
+                    <motion.p
+                      className="mt-5"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={
+                        activeWeb === i
+                          ? { opacity: 0.7, y: 0 }
+                          : { opacity: 0, y: 10 }
+                      }
+                      transition={{ duration: 0.3 }}>
+                      {description}
+                    </motion.p>
+                  </motion.li>
+                ))}
+              </motion.ul>
+            </div>
+          </div>
+        </section>
+        <Footer />
+      </PageTransition>
+    </>
   );
 };
 
