@@ -8,14 +8,14 @@ body {
   color-scheme: dark;
 }
 
-body {
+/* body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
 ::-webkit-scrollbar {
   display: none;
-}
+} */
 
 h1 {
   font-size: max(2.5em, 8vw);

@@ -36,39 +36,24 @@ const OurApproach = () => {
             Our <span className="gradient-text font-black">Approach</span>
           </h2>
         </div>
-        <div>
-          <ul>
-            {approach.map((step, i) => (
-              <li
-                key={i}
-                className="py-10 pb-20 mb-5 px-3 border-b border-zinc-700 flex sm:gap-7 gap-3 sticky top-[30vh] sm:top-[15vh] self-start bg-[#090909] rounded-3xl">
-                <span className="text-[calc(theme(fontSize.desc)*0.7)]">
-                  0{i + 1}/
-                </span>
-                <div>
-                  <h4 className="text-[calc(theme(fontSize.desc)*0.7)] uppercase">
-                    {step.title}
-                  </h4>
-                  <p className="mt-2">{step.desc}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* <div className="sm:mt-20 mt-10 border-t border-zinc-700">
-        <ul>
-          {services.map((service, i) => (
+        <ul className="flex flex-col gap-base">
+          {approach.map((step, i) => (
             <li
               key={i}
-              className="py-10 sm:px-5 px-0 border-b border-zinc-700 text-desc uppercase">
-              <span className="sm:mr-20 mr-5">0{i + 1}/</span>
-              {service}
+              className="py-16 mt-10 sm:mt-0 px-3 border-b border-zinc-700 flex sm:gap-7 gap-3 sticky top-[25vh] sm:top-[15vh] self-start bg-[#090909] rounded-3xl">
+              <span className="text-[calc(theme(fontSize.desc)*0.7)]">
+                0{i + 1}/
+              </span>
+              <div>
+                <h4 className="text-[calc(theme(fontSize.desc)*0.7)] uppercase">
+                  {step.title}
+                </h4>
+                <p className="mt-2">{step.desc}</p>
+              </div>
             </li>
           ))}
         </ul>
-      </div> */}
+      </div>
     </section>
   );
 };

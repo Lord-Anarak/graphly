@@ -49,12 +49,12 @@ const Footer = () => {
             height={220}
             alt="Company Logo"
           />
-          <div className="text-zinc-900 mt-5 text-para">
+          <div className="text-zinc-900 mt-5">
             <TextMaskAnimation
               phrases={[
-                "Graphly is your partner in creating eye-catching and practical designs. We focus on",
-                "branding, digital solutions, and commercial production, helping startups, small",
-                "businesses, and large companies succeed in today’s digital world.",
+                "Graphly is your partner in creating eye-catching and practical designs. We focus ",
+                "on branding, digital solutions, and commercial production, helping startups, ",
+                "small businesses, and large companies succeed in today’s digital world.",
               ]}
             />
           </div>
@@ -166,9 +166,9 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="mailto:info@graphilyco.com"
+                  href="mailto:info@graphlyco.com"
                   className="relative inline-flex after:absolute after:bottom-0 after:h-[1px] after:w-full after:bg-zinc-900 after:max-w-0 hover:after:max-w-full after:transition-all after:duration-500 after:ease-[cubic-bezier(0.83,0,0.17,1)]">
-                  <TextMaskAnimation phrases={["info@graphilyco.com"]} />
+                  <TextMaskAnimation phrases={["info@graphlyco.com"]} />
                 </Link>
               </li>
               <li>

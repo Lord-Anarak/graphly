@@ -21,7 +21,7 @@ const CardContent = ({ card, hovered, index }) => (
         className="object-cover absolute inset-0"
       />
     </div>
-    <div
+    {/* <div
       className={cn(
         "py-8 px-4 transition-opacity duration-300",
         hovered !== null &&
@@ -32,7 +32,7 @@ const CardContent = ({ card, hovered, index }) => (
         {card.title}
       </div>
       <p className="text-zinc-400">{card.desc}</p>
-    </div>
+    </div> */}
   </>
 );
 
@@ -66,7 +66,7 @@ export const Card = React.memo(
 
 Card.displayName = "Card";
 
-export function FocusCards({ cards, className }) {
+export function FocusCards({ cards, className, link }) {
   const [hovered, setHovered] = useState(null);
 
   return (
@@ -75,15 +75,30 @@ export function FocusCards({ cards, className }) {
         "grid grid-cols-1 md:grid-cols-2 gap-[calc(theme(gap.base)*2)] w-full",
         className
       )}>
-      {cards.map((card, index) => (
-        <Card
-          key={card.title}
-          card={card}
-          index={index}
-          hovered={hovered}
-          setHovered={setHovered}
-        />
-      ))}
+      {cards.map((card, index) => {
+        if (link) {
+          return (
+            <Link href={link}>
+              <Card
+                key={index}
+                card={card}
+                index={index}
+                hovered={hovered}
+                setHovered={setHovered}
+              />
+            </Link>
+          );
+        }
+        return (
+          <Card
+            key={index}
+            card={card}
+            index={index}
+            hovered={hovered}
+            setHovered={setHovered}
+          />
+        );
+      })}
     </div>
   );
 }

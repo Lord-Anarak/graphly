@@ -28,7 +28,7 @@ const Works = [
 const RecentWorks = () => {
   return (
     <section className="py-section px-mediumSection">
-      <FocusCards cards={Works} />
+      <FocusCards cards={Works} link={"/works"} />
     </section>
   );
 };
